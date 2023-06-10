@@ -80,5 +80,3 @@ SELECT alumnos.alu_nombre|| ' ' ||alu_apellido as Nombre, AVG(calificaciones.cal
 FROM alumnos
 JOIN calificaciones ON alumnos.id_alumnos = calificaciones.calif_alumno
 GROUP BY alumnos.alu_nombre;
-
-
