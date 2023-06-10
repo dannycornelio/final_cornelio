@@ -10,11 +10,6 @@ CREATE TABLE alumnos(
    );
 
 
-INSERT INTO alumnos (alu_nombre, alu_apellido, alu_grado, alu_arma, alu_nac)
-VALUES('danny', 'cornelio', 'Primer Teniente', 'Infantería', 'Dominicano');
-
-INSERT INTO alumnos (alu_nombre, alu_apellido, alu_grado, alu_arma, alu_nac)
-VALUES ('Jose', 'Perez', 'Segundo Teniente', 'Aviacion', 'Dominicano');
 
 
 CREATE TABLE materias(
@@ -23,9 +18,6 @@ CREATE TABLE materias(
   detalle_situacion CHAR(1) DEFAULT '1'
 );
 
-insert into materias( ma_nombre) values('Ingenieria de Software');
-
-INSERT INTO materias (ma_nombre) VALUES ('Redes II');
 
 CREATE TABLE calificaciones(
   id_calificaciones SERIAL PRIMARY KEY,
@@ -38,15 +30,6 @@ CREATE TABLE calificaciones(
   FOREIGN KEY (calif_materia) REFERENCES materias(id_materias)
  );
 
-
-INSERT INTO calificaciones (calif_alumno, calif_materia, calif_punteo, calif_resultado)
-VALUES (1, 1, 85, 'Aprobado');
-
-INSERT INTO calificaciones (calif_alumno, calif_materia, calif_punteo, calif_resultado)
-VALUES (2, 2, 65, 'Reprobado');
-
-INSERT INTO calificaciones (calif_alumno, calif_materia, calif_punteo, calif_resultado)
-VALUES (1, 2, 65, 'Reprobado');
 
 
 
