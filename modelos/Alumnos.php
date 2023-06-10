@@ -22,22 +22,13 @@ class Alumno extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO alumnos(alu_nombre, alu_apellido, alu_grado, alu_arma, alu_nac, detalle_situacion) 
-                VALUES ('$this->alu_nombre', '$this->alu_apellido', '$this->alu_grado', '$this->alu_arma', '$this->alu_nac', '$this->detalle_situacion')";
+        $sql = "INSERT INTO alumnos(alu_nombre, alu_apellido, alu_grado, alu_arma, alu_nac) VALUES ('$this->alu_nombre', '$this->alu_apellido', '$this->alu_grado', '$this->alu_arma', '$this->alu_nac')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
         $sql = "SELECT * FROM alumnos WHERE detalle_situacion = '1'";
-
-        if($this->alu_nombre != ''){
-            $sql .= " AND alu_nombre LIKE '%$this->alu_nombre%'";
-        }
-
-        if($this->alu_apellido != ''){
-            $sql .= " AND alu_apellido LIKE '%$this->alu_apellido%'";
-        }
 
         if($this->id_alumnos != null){
             $sql .= " AND id_alumnos = $this->id_alumnos";
@@ -48,9 +39,7 @@ class Alumno extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido',
-                alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac'
-                WHERE id_alumnos = $this->id_alumnos";
+        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' WHERE id_alumnos = $this->id_alumnos";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
