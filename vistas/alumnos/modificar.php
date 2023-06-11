@@ -18,14 +18,28 @@ require '../../modelos/Alumnos.php';
             <form action="/final_cornelio/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <input type="hidden" name="cliente_id">
                 <div class="row mb-3">
-                    <div class="col">
+                <div class="col">
                         <label for="cliente_nombre">Nombre del alumno</label>
                         <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="cliente_apellido">Apellido del alumno</label>
+                        <input type="text" name="cliente_apellido" id="cliente_apellido" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Nit del alumno</label>
+                        <label for="cliente_nit">Grado del alumno</label>
+                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="cliente_nit">Arma del alumno</label>
+                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="cliente_nit">Nacionalidad del alumno</label>
                         <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
                     </div>
                 </div>
