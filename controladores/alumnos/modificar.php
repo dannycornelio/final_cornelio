@@ -2,7 +2,7 @@
 require '../../modelos/Alumnos.php';
 
 
-if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
+if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
 
 
 
@@ -13,6 +13,7 @@ if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_gra
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
+
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }

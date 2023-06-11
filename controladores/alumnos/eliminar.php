@@ -9,26 +9,39 @@ try {
         $alumno = new Alumno(['id_alumnos' => $_GET['id_alumnos']]);
 
         // Eliminar el alumno
-        $resultado_alumno = $alumno->eliminar();
+        if($alumno->eliminar()){
+
+            $resultado = true;
+
+        }else{
+            $resultado = false;
+            throw new Exception("Error al eliminar el usuario ");
+        }
 
         // Crear una instancia de la clase RelacionMatAlum con el ID del alumno a eliminar
         $relacion = new RelacionMatAlum(['ma_alumno' => $_GET['id_alumnos']]);
 
         // Eliminar las relaciones entre el alumno y las materias
-        $resultado_relacion = $relacion->eliminar();
+        if($relacion->eliminar()){
 
-        // Verificar si tanto el alumno como las relaciones se eliminaron correctamente
-        if ($resultado_alumno && $resultado_relacion) {
             $resultado = true;
-        } else {
+            
+        }else{
+            
             $resultado = false;
+            throw new Exception("Error al eliminar las relaciones entre el alumno y las mater");
+            
         }
+
     } else {
         $resultado = false;
         $error .= "ID de alumno no proporcionado";
     }
 
-} catch (Exception $e2) {
+}catch (PDOException $ex){
+    $error .= $ex->getMessage();
+
+}catch (Exception $e2) {
     $error .= $e2->getMessage();
 }
 ?>

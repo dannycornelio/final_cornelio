@@ -69,6 +69,7 @@ class RelacionMatAlum extends Conexion{
         $sql = "DELETE FROM relacion_mat_alum WHERE id_mat_alum = $this->id_mat_alum";
         
         $resultado = self::ejecutar($sql);
+        
         return $resultado;
     }
 }

@@ -5,7 +5,7 @@ abstract class Conexion{
 
     private static function conectar(){
         try{ 
-            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=final_cornelio; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1','informix','in4mix'); 
+            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=final_cornelio; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1;charset=utf8','informix','in4mix'); 
             self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
             echo "Error de conexion de BD";

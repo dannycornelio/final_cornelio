@@ -29,8 +29,15 @@ class Alumno extends Conexion{
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM alumnos where alu_nombre like '%$this->alu_nombre%' or alu_apellido like '%$this->alu_apellido%'  AND detalle_situacion <> '0'";
+        $sql = "SELECT * FROM alumnos where detalle_situacion != 0 ";
 
+        if($this->alu_nombre != null && $this->alu_nombre != ''){
+            $sql .= "AND alu_nombre = '$this->alu_nombre'";
+        }
+
+        if($this->alu_apellido != null && $this->alu_apellido != ''){
+            $sql .= " AND alu_apellido = '$this->alu_apellido'";
+        }
 
         $resultado = self::servir($sql);
         return $resultado;
@@ -38,7 +45,7 @@ class Alumno extends Conexion{
 
 
     public function buscar2(){
-        $sql = "SELECT * FROM alumnos WHERE";
+        $sql = "SELECT * FROM alumnos WHERE ";
 
         if($this->id_alumnos != null){
             $sql .= " id_alumnos = $this->id_alumnos";
@@ -48,7 +55,7 @@ class Alumno extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' where alu_nombre = '$this->alu_nombre' AND  id_alumnos = '$this->id_alumnos' ";
+        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' where id_alumnos = '$this->id_alumnos'";
 
       
         $resultado = self::ejecutar($sql);
@@ -56,7 +63,7 @@ class Alumno extends Conexion{
     }
 
     public function eliminar(){
-        $sql = "UPDATE alumnos SET detalle_situacion = '0' WHERE id_alumnos = $this->id_alumnos";
+        $sql = "UPDATE alumnos SET detalle_situacion = 0 WHERE id_alumnos = $this->id_alumnos";
         
         $resultado = self::ejecutar($sql);
         return $resultado;

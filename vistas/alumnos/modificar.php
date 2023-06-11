@@ -17,7 +17,7 @@ require '../../modelos/Alumnos.php';
         <div class="row justify-content-center">
             <form action="/final_cornelio/controladores/alumnos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <!-- <input type="hidden" name="cliente_id"> -->
-                <input type="hidden" id='id_alumnos'  value="<?= $alumnos[0]['ID_ALUMNOS'] ?>" >
+                <input type="hidden" name="id_alumnos"  value="<?= $alumnos[0]['ID_ALUMNOS'] ?>" >
 
                 <div class="row mb-3">
                 <div class="col">
