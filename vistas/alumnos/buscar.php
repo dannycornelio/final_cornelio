@@ -7,7 +7,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cliente_nombre">Nombre</label>
-                        <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control">
+                        <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
