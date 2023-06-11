@@ -43,7 +43,6 @@ class Alumno extends Conexion{
         if($this->id_alumnos != null){
             $sql .= " id_alumnos = $this->id_alumnos";
         }
-
         $resultado = self::servir($sql);
         return $resultado;
     }
