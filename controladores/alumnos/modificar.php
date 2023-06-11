@@ -8,6 +8,7 @@ if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_gra
 
     try {
         $alumno = new Alumno($_POST);
+        
         $resultado = $alumno->modificar();
 
     } catch (PDOException $e) {
