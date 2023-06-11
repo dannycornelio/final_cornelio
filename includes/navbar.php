@@ -15,13 +15,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/ventas/index.php">Ingresar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/index.php">Ingresar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/ventas/buscar.php">Buscar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/buscar.php">Buscar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/controladores/ventas/detalle_ventas.php">Detalle de calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/controladores/calificaciones/detalle_ventas.php">Detalle de calificaciones</a>
                         </li>
                     </ul>
                 </li>
