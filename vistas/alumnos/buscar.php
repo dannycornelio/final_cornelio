@@ -3,23 +3,23 @@
     <div class="container">
         <h1 class="text-center">Buscar alumnos</h1>
         <div class="row justify-content-center">
-            <form action="/practica_9/controladores/clientes/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_cornelio/controladores/alumnos/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nombre">Nombre</label>
-                        <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
+                        <label for="alu_nombre">Nombre</label>
+                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Apellido</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control">
+                        <label for="alu_apellido">Apellido</label>
+                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Nacionalidad</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control">
+                        <label for="alu_nac">Nacionalidad</label>
+                        <input type="text" name="alu_nac" id="alu_nac" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

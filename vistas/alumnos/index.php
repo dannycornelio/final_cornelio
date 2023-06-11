@@ -3,31 +3,31 @@
     <div class="container">
         <h1 class="text-center">Formulario de ingreso del alumno</h1>
         <div class="row justify-content-center">
-            <form action="/practica_9/controladores/clientes/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/final_cornelio/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nombre">Nombre del alumno</label>
-                        <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
+                        <label for="alu_nombre">Nombre del alumno</label>
+                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" required>
                     </div>
                     <div class="col">
-                        <label for="cliente_apellido">Apellido del alumno</label>
-                        <input type="text" name="cliente_apellido" id="cliente_apellido" class="form-control" required>
+                        <label for="alu_apellido">Apellido del alumno</label>
+                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Grado del alumno</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                        <label for="alu_grado">Grado del alumno</label>
+                        <input type="text" name="alu_grado" id="alu_grado" class="form-control" required>
                     </div>
                     <div class="col">
-                        <label for="cliente_nit">Arma del alumno</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                        <label for="alu_arma">Arma del alumno</label>
+                        <input type="text" name="alu_arma" id="alu_arma" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Nacionalidad del alumno</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                        <label for="alu_nac">Nacionalidad del alumno</label>
+                        <input type="text" name="alu_nac" id="alu_nac" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
