@@ -1,6 +1,7 @@
 <?php
 require_once 'Conexion.php';
 
+
 class Alumno extends Conexion{
     public $id_alumnos;
     public $alu_nombre;
@@ -28,10 +29,19 @@ class Alumno extends Conexion{
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM alumnos WHERE detalle_situacion = '1'";
+        $sql = "SELECT * FROM alumnos where alu_nombre like '%$this->alu_nombre%' or alu_apellido like '%$this->alu_apellido%'  AND detalle_situacion <> '0'";
+
+
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
+
+
+    public function buscar2(){
+        $sql = "SELECT * FROM alumnos WHERE";
 
         if($this->id_alumnos != null){
-            $sql .= " AND id_alumnos = $this->id_alumnos";
+            $sql .= " id_alumnos = $this->id_alumnos";
         }
 
         $resultado = self::servir($sql);
@@ -39,8 +49,9 @@ class Alumno extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' WHERE id_alumnos = $this->id_alumnos";
-        
+        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' where alu_nombre = '$this->alu_nombre' AND  id_alumnos = '$this->id_alumnos' ";
+
+      
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

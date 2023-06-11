@@ -8,8 +8,7 @@ class RelacionMatAlum extends Conexion{
     public $ma_alumno;
     public $ma_materia;
 
-    public function __construct($args = [] )
-    {
+    public function __construct($args = [] ){
         $this->id_mat_alum = $args['id_mat_alum'] ?? null;
         $this->ma_alumno = $args['ma_alumno'] ?? '';
         $this->ma_materia = $args['ma_materia'] ?? '';
@@ -21,25 +20,44 @@ class RelacionMatAlum extends Conexion{
         return $resultado;
     }
 
+    // public function buscar(){
+    //     $sql = "SELECT * FROM relacion_mat_alum";
+
+    //     if($this->id_mat_alum != null){
+    //         $sql .= " WHERE id_mat_alum = $this->id_mat_alum";
+    //     }
+
+    //     if($this->ma_alumno != ''){
+    //         $sql .= " AND ma_alumno = $this->ma_alumno";
+    //     }
+
+    //     if($this->ma_materia != ''){
+    //         $sql .= " AND ma_materia = $this->ma_materia";
+    //     }
+
+    //     $resultado = self::servir($sql);
+    //     return $resultado;
+    // }
+
+
     public function buscar(){
-        $sql = "SELECT * FROM relacion_mat_alum";
-
+        $sql = "SELECT * FROM relacion_mat_alum WHERE 1=1";
+    
         if($this->id_mat_alum != null){
-            $sql .= " WHERE id_mat_alum = $this->id_mat_alum";
+            $sql .= " AND id_mat_alum = $this->id_mat_alum";
         }
-
+    
         if($this->ma_alumno != ''){
             $sql .= " AND ma_alumno = $this->ma_alumno";
         }
-
+    
         if($this->ma_materia != ''){
             $sql .= " AND ma_materia = $this->ma_materia";
         }
-
+    
         $resultado = self::servir($sql);
         return $resultado;
     }
-
     public function modificar(){
         $sql = "UPDATE relacion_mat_alum SET ma_alumno = $this->ma_alumno, ma_materia = $this->ma_materia WHERE id_mat_alum = $this->id_mat_alum";
         

@@ -1,18 +1,38 @@
 <?php
-require '../../modelos/Alumno.php';
+require '../../modelos/Alumnos.php';
+require '../../modelos/RelacionMatAlum.php';
 
+try {
 
-    try {
-        $alumno = new Alumno($_GET);
-        $resultado = $alumno->eliminar();
+    if (isset($_GET['id_alumnos'])) {
+        // Crear una instancia de la clase Alumno con el ID del alumno a eliminar
+        $alumno = new Alumno(['id_alumnos' => $_GET['id_alumnos']]);
 
-    } catch (PDOException $e) {
-        $error = $e->getMessage();
-    } catch (Exception $e2){
-        $error = $e2->getMessage();
+        // Eliminar el alumno
+        $resultado_alumno = $alumno->eliminar();
+
+        // Crear una instancia de la clase RelacionMatAlum con el ID del alumno a eliminar
+        $relacion = new RelacionMatAlum(['ma_alumno' => $_GET['id_alumnos']]);
+
+        // Eliminar las relaciones entre el alumno y las materias
+        $resultado_relacion = $relacion->eliminar();
+
+        // Verificar si tanto el alumno como las relaciones se eliminaron correctamente
+        if ($resultado_alumno && $resultado_relacion) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+    } else {
+        $resultado = false;
+        $error .= "ID de alumno no proporcionado";
     }
 
+} catch (Exception $e2) {
+    $error .= $e2->getMessage();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +48,7 @@ require '../../modelos/Alumno.php';
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Eliminado exitosamente!
+                        Alumno eliminado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
