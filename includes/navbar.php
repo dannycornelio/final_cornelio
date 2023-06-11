@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materia/index.php">Crear Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/index.php">Crear Materia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materia/buscar.php">Buscar Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/buscar.php">Buscar Materia</a>
                         </li>
                     </ul>
                 </li>
