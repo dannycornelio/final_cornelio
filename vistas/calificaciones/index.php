@@ -5,7 +5,7 @@ require_once '../../modelos/Materias.php';
 try {
     $alumno = new Alumno();
     $materia = new Materia();
-    $alumnos = $alumno->buscar2();
+    $alumnos = $alumno->buscar();
     $materias = $materia->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -37,7 +37,7 @@ try {
             <div class="row mb-3">
                 <div class="col-lg-8">
                     <label for="materia1">Materia</label>
-                    <select name="materia[]" id="materia1" class="form-control">
+                    <select name="materia" id="materia1" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($materias as $key => $materia) : ?>
                             <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
