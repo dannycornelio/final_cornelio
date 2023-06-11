@@ -15,13 +15,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/ventas/index.php">Ingresar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/ventas/index.php">Ingresar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/ventas/buscar.php">Buscar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/ventas/buscar.php">Buscar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/controladores/ventas/detalle_ventas.php">Detalle de calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/controladores/ventas/detalle_ventas.php">Detalle de calificaciones</a>
                         </li>
                     </ul>
                 </li>
@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/productos/index.php">Crear Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materia/index.php">Crear Materia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/productos/buscar.php">Buscar Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materia/buscar.php">Buscar Materia</a>
                         </li>
                     </ul>
                 </li>
@@ -44,10 +44,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/clientes/index.php">Crear Alumnos</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/index.php">Crear Alumnos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_9/vistas/clientes/buscar.php">Buscar Alumnos</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/buscar.php">Buscar Alumnos</a>
                         </li>
                     </ul>
                 </li>
