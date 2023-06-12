@@ -15,7 +15,7 @@ try {
 
         }else{
             $resultado = false;
-            throw new Exception("Error al eliminar el usuario ");
+            throw new Exception("Error al eliminar el alumno");
         }
 
         // Crear una instancia de la clase RelacionMatAlum con el ID del alumno a eliminar
