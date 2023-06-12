@@ -37,7 +37,7 @@ require_once 'Conexion.php';
             return $resultado;
         }
     
-        public function eliminar(){
+        public function eliminar() {
             $sql = "UPDATE materias SET detalle_situacion = '0' WHERE id_materias = $this->id_materias";
             
             $resultado = self::ejecutar($sql);
