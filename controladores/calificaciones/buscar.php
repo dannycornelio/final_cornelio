@@ -32,22 +32,28 @@ try {
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
+                    <thead class="table-dark">                    
                         <tr>
-                            <th>ALUMNO</th>
-                            <th>GRADO</th>
-                            <th>ARMA</th>
-                            <th>NACIONALIDAD</th>
+                            <h1 class="text-center" style="background-color: black; color: white;">CALIFICACION DEL ALUMNO</h1>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php if(count($alumnos) > 0):?>
+                    <?php if(count($alumnos) > 0):?>
                         <?php foreach($alumnos as $key => $alumno) : ?>
                         <tr class="text-center">
+                        <tr>
+                            <th>ALUMNO</th>
                             <td><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO']?></td>
-                            <td><?= $alumno['ALU_GRADO']?></td>
-                            <td><?= $alumno['ALU_ARMA']?></td>
-                            <td><?= $alumno['ALU_NAC']?></td>
+                        </tr>  
+                        <tr>
+                        <th>GRADO Y ARMA</th>
+                            <td><?= $alumno['ALU_GRADO'] . ' ' . 'de' . ' ' . $alumno['ALU_ARMA']?></td>
+                        </tr> 
+                        <tr>
+                        <th>NACIONALIDAD</th>
+                        <td><?= $alumno['ALU_NAC']?></td>
+                        </tr>
+                     <tbody>
+                           
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -59,6 +65,10 @@ try {
                 </table>
             </div>
         </div>
+
+        <tr>
+            <h3 class="text-center" style="margin-top: 0; margin-bottom: 0;">NOTAS OBTENIDAS</h3>
+        </tr>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
@@ -67,7 +77,7 @@ try {
                             <th>NO. </th>
                             <th>MATERIA</th>
                             <th>PUNTEO</th>
-                            <th>RESULTADO</th>
+                            <th>GANO/PERDIO</th>
                         </tr>
                     </thead>
                     <tbody>
