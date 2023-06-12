@@ -1,9 +1,22 @@
 <?php
 require_once '../../modelos/Calificaciones.php';
+require_once '../../modelos/Alumnos.php';
 try {
-    $calificacion = new Calificacion($_GET);
+
+    if(isset($_GET['calif_alumno']) && $_GET['calif_alumno'] != ''){
+
+        $id_alumno = $_GET['calif_alumno'];
+
+        $alumnos = new Alumno(["id_alumnos" => $id_alumno]);
+        $alumnos = $alumnos->buscar2();
+
+        $calificacion = new Calificacion(["calif_alumno" => $id_alumno]);
+        $calificaciones = $calificacion->buscar2();
+
+        $promedio = $calificacion->promedio();     
+
+    }
     
-    $calificaciones = $calificacion->buscar();
 
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -12,17 +25,10 @@ try {
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultado de calificaciones</title>
-</head>
-<body>
-    <div class="container">
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
@@ -36,12 +42,14 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($calificaciones) > 0):?>
-                        <?php foreach($calificaciones as $key => $calificacion) : ?>
-                        <tr>
+                        <?php if(count($alumnos) > 0):?>
+                        <?php foreach($alumnos as $key => $alumno) : ?>
+                        <tr class="text-center">
                             <td><?= $key + 1 ?></td>
-                            <td><?= $calificacion['ALU_NOMBRE'] . ' ' . $calificacion['ALU_NOMBRE']?></td>
-                            <td><a class="btn btn-info w-100" href="/final_cornelio/vistas/calificaciones/ptomedio.php?id_calificaciones=<?= $calificacion['ID_CALIFICACIONES']?>">VER DETALLE</a></td>
+                            <td><?= $alumno['alu_nombre'] . ' ' . $alumno['alu_apellido']?></td>
+                            <td><?= $alumno['alu_grado']?></td>
+                            <td><?= $alumno['alu_arma']?></td>
+                            <td><?= $alumno['alu_nac']?></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -53,11 +61,54 @@ try {
                 </table>
             </div>
         </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>NO. </th>
+                            <th>MATERIA</th>
+                            <th>PUNTEO</th>
+                            <th>RESULTADO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(count($calificaciones) > 0):?>
+                        <?php foreach($calificaciones as $key => $calificacion) : ?>
+                        <tr class="text-center">
+                            <td><?= $key + 1 ?></td>
+                            <td><?= $calificacion['calif_materia']?></td>
+                            <td><?= $calificacion['calif_punteo']?> PUNTOS</td>
+                            <td><?= $calificacion['calif_resultado']?></td>
+                            <td></td>
+                        </tr>
+                        <?php endforeach ?>
+                        <?php else :?>
+                            <tr>
+                                <td colspan="4">NO EXISTEN REGISTROS</td>
+                            </tr>
+                        <?php endif?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8">
+                <table class="table table-bordered table-hover">
+                    <tbody class="text-center">
+                        <tr>
+                            <td>PROMEDIO</td>
+                            <td><?= number_format($promedio[0]['promedio'], 2, '.', ',')?> PUNTOS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
                 <a href="/final_cornelio/vistas/calificaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
-</body>
-</html>
+    <?php include_once '../../includes/footer.php'?>

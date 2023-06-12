@@ -2,37 +2,55 @@
 require_once '../../modelos/Calificaciones.php';
 require_once '../../modelos/RelacionMatAlum.php';
 
-// $materias = array_filter($_POST['materias']);
-// $calif_punteo = array_filter($_POST['calif_punteo']);
-if($_POST['calif_alumno'] != ''){
-
-    
-    try {
-        $calificacion = new Calificacion($_POST);
-        $resultado = $calificacion->guardar();
-        $error = "NO se guardó correctamente";
-    } catch (PDOException $e) {
-        $error = $e->getMessage();
-    } catch (Exception $e2){
-        $error = $e2->getMessage();
+function nota_literal($nota){
+    if($nota >= 70){
+        return "Aprobado";
+    }else{
+        return "Reprobado";
     }
-}else{
-    $error = "Debe llenar todos los datos";
 }
 
+// $materias = array_filter($_POST['materias']);
+// $calif_punteo = array_filter($_POST['calif_punteo']);
+
+if(isset($_POST)){
+
+    if($_POST['calif_alumno'] != '' && $_POST['calif_materia'] != '' && $_POST['calif_punteo'] != ''){
+
+        $calif_alumno = $_POST['calif_alumno'];
+        $calif_materia = $_POST['calif_materia'];
+        $calif_punteo = $_POST['calif_punteo'];
+        $calif_resultado = nota_literal($calif_punteo);
+
+        $arg = [
+            'calif_alumno' => $calif_alumno,
+            'calif_materia' => $calif_materia,
+            'calif_punteo' => $calif_punteo,
+            'calif_resultado' => $calif_resultado
+        ];
+        
+        try {
+            $calificacion = new Calificacion($arg);
+            $resultado = $calificacion->guardar();
+            $error = "NO se guardó correctamente";
+        } catch (PDOException $e) {
+            $error = $e->getMessage();
+        } catch (Exception $e2){
+            $error = $e2->getMessage();
+        }
+    }else{
+        $error = "Debe llenar todos los datos";
+    }
+
+}else{
+    $error = "No se recibieron datos";
+}
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados</title>
-</head>
-<body>
-    <div class="container">
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
                 <?php if($resultado): ?>
@@ -53,5 +71,4 @@ if($_POST['calif_alumno'] != ''){
             </div>
         </div>
     </div>
-</body>
-</html>
+    <?php include_once '../../includes/footer.php'?>

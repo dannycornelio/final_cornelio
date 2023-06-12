@@ -1,6 +1,7 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-    <div class="container">
+
+    <div class="container mt-5">
         <h1 class="text-center">Formulario de ingreso del alumno</h1>
         <div class="row justify-content-center">
             <form action="/final_cornelio/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
@@ -38,4 +39,5 @@
             </form>
         </div>
     </div>
+    
 <?php include_once '../../includes/footer.php'?>

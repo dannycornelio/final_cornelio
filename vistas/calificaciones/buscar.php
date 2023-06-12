@@ -14,7 +14,8 @@ require_once '../../modelos/Materias.php';
 ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-    <div class="container">
+
+    <div class="container mt-5">
         <h1 class="text-center">Formulario de búsqueda de calificaciones</h1>
         <div class="row justify-content-center">
             <form action="/final_cornelio/controladores/calificaciones/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
@@ -24,7 +25,7 @@ require_once '../../modelos/Materias.php';
                         <select name="calif_alumno" id="calif_alumno" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($alumnos as $key => $alumno) : ?>
-                                <option value="<?= $alumno['ID_ALUMNOS'] ?>"><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO'] ?></option>
+                                <option value="<?= $alumno['id_alumnos'] ?>"><?= $alumno['alu_nombre'] . ' ' . $alumno['alu_apellido'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -37,4 +38,5 @@ require_once '../../modelos/Materias.php';
             </form>
         </div>
     </div>
+
 <?php include_once '../../includes/footer.php'?>

@@ -45,8 +45,24 @@ class Calificacion extends Conexion{
         return $resultado;
     }
 
+    public function buscar2(){
+        $sql = "SELECT materias.ma_nombre as calif_materia, 
+        calificaciones.calif_punteo as calif_punteo, 
+        calificaciones.calif_resultado as calif_resultado  
+        FROM calificaciones INNER JOIN materias ON 
+        materias.id_materias = calificaciones.calif_materia 
+        WHERE calificaciones.detalle_situacion = '1'";
+
+        if($this->calif_alumno != ''){
+            $sql .= " AND calificaciones.calif_alumno = $this->calif_alumno";
+        }
+
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
+
     public function modificar(){
-        $sql = "UPDATE calificaciones SET calif_alumno = $this->calif_alumno, calif_materia = $this->calif_materia, calif_punteo = $this->calif_punteo, calif_resultado = '$this->calif_resultado' WHERE id_calificaciones = $this->id_calificaciones";
+        $sql = "UPDATE calificaciones SET calif_punteo = $this->calif_punteo, calif_resultado = '$this->calif_resultado' WHERE id_calificaciones = $this->id_calificaciones";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
@@ -56,6 +72,13 @@ class Calificacion extends Conexion{
         $sql = "UPDATE calificaciones SET detalle_situacion = '0' WHERE id_calificaciones = $this->id_calificaciones";
         
         $resultado = self::ejecutar($sql);
+        return $resultado;
+    }
+
+    public function promedio(){
+        $sql = "SELECT AVG(calif_punteo) as promedio FROM calificaciones WHERE calif_alumno = $this->calif_alumno AND detalle_situacion = '1'";
+        
+        $resultado = self::servir($sql);
         return $resultado;
     }
 }
