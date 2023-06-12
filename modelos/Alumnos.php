@@ -56,7 +56,6 @@ class Alumno extends Conexion{
         return $resultado;
     }
 
-
     public function buscar2(){
         $sql = "SELECT * FROM alumnos WHERE ";
 
