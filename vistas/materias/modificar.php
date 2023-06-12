@@ -1,9 +1,12 @@
 <?php
 require '../../modelos/Materias.php';
     try {
-        $materia = new Materia($_GET);
+        if(isset($_GET['id_materias']) && $_GET['id_materias'] != ''){
 
-        $materias = $materia->buscar();
+            $id_materia = $_GET['id_materias'];
+            $materia = new Materia(["id_materias" => $id_materia]);
+            $materias = $materia->buscar();
+        }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
