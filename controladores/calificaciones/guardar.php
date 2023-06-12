@@ -4,9 +4,9 @@ require_once '../../modelos/RelacionMatAlum.php';
 
 function nota_literal($nota){
     if($nota >= 70){
-        return "Aprobado";
+        return "Gano";
     }else{
-        return "Reprobado";
+        return "Perdio";
     }
 }
 if(isset($_POST)){
