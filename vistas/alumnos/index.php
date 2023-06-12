@@ -8,27 +8,27 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alu_nombre">Nombre del alumno</label>
-                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" required>
+                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" placeholder="ejemplo: danny " required>
                     </div>
                     <div class="col">
                         <label for="alu_apellido">Apellido del alumno</label>
-                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control" required>
+                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control" placeholder="ejemplo: cornelio" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alu_grado">Grado del alumno</label>
-                        <input type="text" name="alu_grado" id="alu_grado" class="form-control" required>
+                        <input type="text" name="alu_grado" id="alu_grado" class="form-control" placeholder="ejemplo: teniente" required>
                     </div>
                     <div class="col">
                         <label for="alu_arma">Arma del alumno</label>
-                        <input type="text" name="alu_arma" id="alu_arma" class="form-control" required>
+                        <input type="text" name="alu_arma" id="alu_arma" class="form-control" placeholder="ejemplo: aviacion"required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alu_nac">Nacionalidad del alumno</label>
-                        <input type="text" name="alu_nac" id="alu_nac" class="form-control" required>
+                        <input type="text" name="alu_nac" id="alu_nac" class="form-control" placeholder="ejemplo: dominicano" required>
                     </div>
                 </div>
                 <div class="row mb-3">
