@@ -27,7 +27,20 @@ class Alumno extends Conexion{
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
+    
+    public function eliminar(){
+        $sql = "UPDATE alumnos SET detalle_situacion = 0 WHERE id_alumnos = $this->id_alumnos";
+        
+        $resultado = self::ejecutar($sql);
+        return $resultado;
+    }
+    public function modificar(){
+        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' where id_alumnos = '$this->id_alumnos'";
 
+      
+        $resultado = self::ejecutar($sql);
+        return $resultado;
+    }
     public function buscar(){
         $sql = "SELECT * FROM alumnos where detalle_situacion != 0 ";
 
@@ -54,18 +67,5 @@ class Alumno extends Conexion{
         return $resultado;
     }
 
-    public function modificar(){
-        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' where id_alumnos = '$this->id_alumnos'";
 
-      
-        $resultado = self::ejecutar($sql);
-        return $resultado;
-    }
-
-    public function eliminar(){
-        $sql = "UPDATE alumnos SET detalle_situacion = 0 WHERE id_alumnos = $this->id_alumnos";
-        
-        $resultado = self::ejecutar($sql);
-        return $resultado;
-    }
 }

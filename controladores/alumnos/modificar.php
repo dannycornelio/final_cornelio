@@ -1,11 +1,6 @@
 <?php
 require '../../modelos/Alumnos.php';
-
-
 if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
-
-
-
     try {
         $alumno = new Alumno($_POST);
         
@@ -20,11 +15,9 @@ if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apell
 }else{
     $error = "Faltaron campos por llenar";
 }
-
 ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
@@ -36,8 +29,7 @@ if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apell
                     <div class="alert alert-danger" role="alert">
                         Ocurrió un error: <?= $error ?>
                     </div>
-                <?php endif ?>
-              
+                <?php endif ?>             
             </div>
         </div>
         <div class="row">
