@@ -44,7 +44,6 @@ try {
                         <?php if(count($alumnos) > 0):?>
                         <?php foreach($alumnos as $key => $alumno) : ?>
                         <tr class="text-center">
-                            <td><?= $key + 1 ?></td>
                             <td><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO']?></td>
                             <td><?= $alumno['ALU_GRADO']?></td>
                             <td><?= $alumno['ALU_ARMA']?></td>
