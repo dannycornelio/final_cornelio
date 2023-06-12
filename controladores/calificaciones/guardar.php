@@ -9,10 +9,6 @@ function nota_literal($nota){
         return "Reprobado";
     }
 }
-
-// $materias = array_filter($_POST['materias']);
-// $calif_punteo = array_filter($_POST['calif_punteo']);
-
 if(isset($_POST)){
 
     if($_POST['calif_alumno'] != '' && $_POST['calif_materia'] != '' && $_POST['calif_punteo'] != ''){
