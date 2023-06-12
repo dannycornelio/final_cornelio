@@ -34,7 +34,6 @@ try {
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>NO. </th>
                             <th>ALUMNO</th>
                             <th>GRADO</th>
                             <th>ARMA</th>
@@ -70,7 +69,6 @@ try {
                             <th>MATERIA</th>
                             <th>PUNTEO</th>
                             <th>RESULTADO</th>
-                            <th>OPCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,7 +79,6 @@ try {
                             <td><?= $calificacion['CALIF_MATERIA']?></td>
                             <td><?= $calificacion['CALIF_PUNTEO']?> PUNTOS</td>
                             <td><?= $calificacion['CALIF_RESULTADO']?></td>
-                            <td></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
