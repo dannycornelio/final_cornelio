@@ -46,7 +46,7 @@ try {
                 </div>
                 <div class="col-lg-4">
                     <label for="calificacion1">Punteo</label>
-                    <input type="number" step="any" name="calif_punteo" id="calificacion1" class="form-control">
+                    <input type="number" step="any" name="calif_punteo" id="calificacion1" class="form-control" placeholder="ejemplo: 75.50">
                 </div>
             </div>
             <div class="row mb-3">

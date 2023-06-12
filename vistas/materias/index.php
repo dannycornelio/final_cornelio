@@ -8,7 +8,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="ma_nombre">Ingrese el nombre del materias</label>
-                        <input type="text" name="ma_nombre" id="ma_nombre" class="form-control">
+                        <input type="text" name="ma_nombre" id="ma_nombre" class="form-control" placeholder="ejemplo: ingenieria de software">
                     </div>
                 </div>
                 <div class="row mb-3">

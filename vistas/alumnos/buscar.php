@@ -8,13 +8,13 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alu_nombre">Nombre del alumno</label>
-                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control">
+                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" placeholder="ejemplo: danny">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alu_apellido">Apellido del alumno</label>
-                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control">
+                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control" placeholder="ejemplo: cornelio">
                     </div>
                 </div>
                 <div class="row mb-3">
