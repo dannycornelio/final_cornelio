@@ -46,10 +46,10 @@ try {
                         <?php foreach($alumnos as $key => $alumno) : ?>
                         <tr class="text-center">
                             <td><?= $key + 1 ?></td>
-                            <td><?= $alumno['alu_nombre'] . ' ' . $alumno['alu_apellido']?></td>
-                            <td><?= $alumno['alu_grado']?></td>
-                            <td><?= $alumno['alu_arma']?></td>
-                            <td><?= $alumno['alu_nac']?></td>
+                            <td><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO']?></td>
+                            <td><?= $alumno['ALU_GRADO']?></td>
+                            <td><?= $alumno['ALU_ARMA']?></td>
+                            <td><?= $alumno['ALU_NAC']?></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -78,9 +78,9 @@ try {
                         <?php foreach($calificaciones as $key => $calificacion) : ?>
                         <tr class="text-center">
                             <td><?= $key + 1 ?></td>
-                            <td><?= $calificacion['calif_materia']?></td>
-                            <td><?= $calificacion['calif_punteo']?> PUNTOS</td>
-                            <td><?= $calificacion['calif_resultado']?></td>
+                            <td><?= $calificacion['CALIF_MATERIA']?></td>
+                            <td><?= $calificacion['CALIF_PUNTEO']?> PUNTOS</td>
+                            <td><?= $calificacion['CALIF_RESULTADO']?></td>
                             <td></td>
                         </tr>
                         <?php endforeach ?>
@@ -99,7 +99,7 @@ try {
                     <tbody class="text-center">
                         <tr>
                             <td>PROMEDIO</td>
-                            <td><?= number_format($promedio[0]['promedio'], 2, '.', ',')?> PUNTOS</td>
+                            <td><?= number_format($promedio[0]['PROMEDIO'], 2, '.', ',')?> PUNTOS</td>
                         </tr>
                     </tbody>
                 </table>
