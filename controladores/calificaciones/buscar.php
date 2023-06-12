@@ -29,26 +29,28 @@ try {
 <?php include_once '../../includes/navbar.php'?>
 
     <div class="container mt-5">
-        <div class="row justify-content-center">
+    <div class="row justify-content-center">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ALUMNO</th>
-                            <th>GRADO</th>
-                            <th>ARMA</th>
-                            <th>NACIONALIDAD</th>
-                        </tr>
+                            <h2  class="text-center">CALIFICACION DEL ALUMNO</h2>
                     </thead>
-                    <tbody>
-                        <?php if(count($alumnos) > 0):?>
+                    <?php if(count($alumnos) > 0):?>
                         <?php foreach($alumnos as $key => $alumno) : ?>
                         <tr class="text-center">
-                            <td><?= $key + 1 ?></td>
+                        <tr>
+                            <th>ALUMNO</th>
                             <td><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO']?></td>
-                            <td><?= $alumno['ALU_GRADO']?></td>
-                            <td><?= $alumno['ALU_ARMA']?></td>
-                            <td><?= $alumno['ALU_NAC']?></td>
+                        </tr>  
+                        <tr>
+                        <th>GRADO Y ARMA</th>
+                            <td><?= $alumno['ALU_GRADO'] . ' ' . 'de' . ' ' . $alumno['ALU_ARMA']?></td>
+                        </tr> 
+                        <tr>
+                        <th>NACIONALIDAD</th>
+                        <td><?= $alumno['ALU_NAC']?></td>
+                        </tr>
+                     <tbody>
+                           
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -60,6 +62,10 @@ try {
                 </table>
             </div>
         </div>
+
+        <tr>
+            <h3 class="text-center">NOTAS OBTENIDAS</h3>
+        </tr>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
