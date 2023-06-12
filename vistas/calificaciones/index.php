@@ -27,7 +27,7 @@ try {
                     <select name="calif_alumno" id="calif_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($alumnos as $key => $alumno) : ?>
-                            <option value="<?= $alumno['id_alumnos'] ?>"><?= $alumno['alu_nombre'] . ' ' . $alumno['alu_apellido'] ?></option>
+                            <option value="<?= $alumno['ID_ALUMNOS'] ?>"><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -40,7 +40,7 @@ try {
                     <select name="calif_materia" id="materia1" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($materias as $key => $materia) : ?>
-                            <option value="<?= $materia['id_materias'] ?>"><?= $materia['ma_nombre'] ?></option>
+                            <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>

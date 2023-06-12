@@ -25,7 +25,7 @@ require_once '../../modelos/Materias.php';
                         <select name="calif_alumno" id="calif_alumno" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($alumnos as $key => $alumno) : ?>
-                                <option value="<?= $alumno['id_alumnos'] ?>"><?= $alumno['alu_nombre'] . ' ' . $alumno['alu_apellido'] ?></option>
+                                <option value="<?= $alumno['ID_ALUMNOS'] ?>"><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
