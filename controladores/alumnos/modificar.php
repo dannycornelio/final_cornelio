@@ -18,7 +18,7 @@ if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apell
         $error = $e2->getMessage();
     }
 }else{
-    $error = "Debe llenar todos los datos";
+    $error = "Faltaron campos por llenar";
 }
 
 ?>
@@ -30,7 +30,7 @@ if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apell
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Modificado exitosamente!
+                        La modificacion se realizo sin novedad!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
